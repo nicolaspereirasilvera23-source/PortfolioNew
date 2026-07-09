@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicolás Pereira — Software Developer</title>
+  <meta name="description" content="Portfolio de Nicolás Pereira, Software Developer enfocado en backend, APIs, automatización e IA aplicada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#inicio">
+        <span class="dot"></span>
+        Nicolás Pereira
+      </a>
+
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#stack">Stack</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <div class="nav-cta">
+        <a class="icon-btn" href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.25.8-.57v-2c-3.2.7-3.9-1.55-3.9-1.55-.53-1.35-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.47.1-3.06 0 0 .97-.31 3.2 1.18a11 11 0 0 1 5.82 0c2.2-1.49 3.18-1.18 3.18-1.18.63 1.59.24 2.77.12 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.7 5.4-5.26 5.68.41.36.78 1.07.78 2.15v3.19c0 .32.2.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>
+          </svg>
+        </a>
+
+        <a class="icon-btn" href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/>
+          </svg>
+        </a>
+
+        <button class="menu-toggle" aria-label="Menú" id="menuToggle">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18M3 12h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>
+            </svg>
+            dev log · Montevideo, UY
+          </span>
+
+          <h1>Construyo software que convierte procesos manuales en sistemas que <span class="accent">sí laburan.</span></h1>
+
+          <p class="lead">
+            Software Developer con foco en backend, APIs, automatización e IA aplicada.
+            Diseño soluciones simples, mantenibles y orientadas a resolver problemas reales:
+            menos planillas eternas, más sistemas con criterio.
+          </p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn-ghost" href="mailto:nicolas.psilvera@gmail.com">Contactarme</a>
+          </div>
+        </div>
+
+        <div class="hero-art reveal">
+          <span class="sticker s1">API Ready ✓</span>
+          <span class="sticker s2">deploy: prod</span>
+
+          <div class="avatar-frame">
+            <div class="ring"></div>
+            <div class="avatar-photo">
+              <img src="yop.jpg" alt="Foto de Nicolás Pereira">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section id="sobre-mi" class="about">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="note-card reveal">
+            <p>
+              Empecé por el backend porque quería entender qué pasa detrás de un formulario antes de tocar el frontend.
+              Ese orden se me quedó: antes de escribir una línea, dibujo la arquitectura en un cuaderno — literal — y recién ahí construyo.
+            </p>
+            <p>
+              Uso la IA como un socio senior: le pido que cuestione mis decisiones, no que las tome por mí.
+              Así puedo defender cada parte de lo que armo, línea por línea, en una entrevista.
+            </p>
+            <p>
+              Lo que más disfruto es agarrar un proceso manual — una planilla, un cuaderno de asistencia, un WhatsApp lleno de mensajes — y convertirlo en un sistema que no se rompe.
+              Ya lo hice para un club de 80 personas y para un evento familiar real. Ahora quiero hacerlo para una empresa.
+            </p>
+          </div>
+
+          <div class="about-copy reveal">
+            <span class="eyebrow">01 · cómo pienso</span>
+            <h2>Sobre mí</h2>
+
+            <ul class="about-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+                <span>Arquitectura primero, código después — pseudocódigo y diagramas antes de la primera función.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                  <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <span>Aprendo construyendo cosas que gente real usa — no solo ejercicios de curso.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span>Documento todo — herencia de mi rol administrativo, donde un registro mal hecho cuesta caro.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Automatizo primero lo tedioso: si lo hago dos veces a mano, la tercera vez lo escribo en código.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section id="proyectos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">02 · hojas del cuaderno</span>
+          <h2>Proyectos destacados</h2>
+          <p>Cuatro proyectos con narrativa clara: problema, solución, stack y aprendizaje. No “CRUD número 47”, por suerte.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- QRLY -->
+          <article class="page-card reveal">
+            <span class="pin"></span>
+
+            <div class="proj-head">
+              <h3>QRLY</h3>
+              <span class="proj-tag">Freelance / Producto real</span>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Problema</span>
+              <p>En un cumpleaños de 15 familiar, las fotos del evento podían quedar dispersas entre celulares, chats y archivos reenviados.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Solución</span>
+              <p>Álbum colaborativo por QR: los invitados escanean, acceden al evento y suben sus fotos desde el celular.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Aprendizaje</span>
+              <p>Convertir una necesidad familiar concreta en una solución freelance con flujo de usuario, backend y manejo de archivos.</p>
+            </div>
+
+            <div class="proj-stack">
+              <span class="chip">Node.js</span>
+              <span class="chip">Express</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Cloudinary</span>
+              <span class="chip">Render</span>
+            </div>
+
+            <div class="proj-foot">
+              <span class="stamp">Real use case</span>
+              <div class="proj-links">
+                <a href="https://github.com/nicolaspereirasilvera23-source/AlbumQR-WEb" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- AttendanceAPI -->
+          <article class="page-card reveal">
+            <span class="pin"></span>
+
+            <div class="proj-head">
+              <h3>AttendanceAPI</h3>
+              <span class="proj-tag">Backend API</span>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Problema</span>
+              <p>Registrar asistencias manualmente consume tiempo, genera errores y dificulta consultar datos después.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Solución</span>
+              <p>API para gestionar registros de asistencia, pensada para centralizar datos y exponer endpoints claros.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Aprendizaje</span>
+              <p>Diseñar endpoints, separar responsabilidades y trabajar lógica de negocio con una estructura mantenible.</p>
+            </div>
+
+            <div class="proj-stack">
+              <span class="chip">Python</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">SQLite</span>
+              <span class="chip">REST API</span>
+            </div>
+
+            <div class="proj-foot">
+              <span class="stamp">Backend core</span>
+              <div class="proj-links">
+                <a href="https://github.com/nicolaspereirasilvera23-source/attendance-api" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Telegram Lead Bot -->
+          <article class="page-card reveal">
+            <span class="pin"></span>
+
+            <div class="proj-head">
+              <h3>Telegram Lead Bot</h3>
+              <span class="proj-tag">Automatización</span>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Problema</span>
+              <p>Responder y ordenar potenciales clientes de forma manual escala tan bien como una tostadora en Kubernetes.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Solución</span>
+              <p>Bot de Telegram para captar leads, responder flujos iniciales y estructurar información comercial.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Aprendizaje</span>
+              <p>Automatizar comunicación, diseñar flujos conversacionales y reducir fricción en procesos comerciales.</p>
+            </div>
+
+            <div class="proj-stack">
+              <span class="chip">Telegram Bot</span>
+              <span class="chip">Automation</span>
+              <span class="chip">Leads</span>
+              <span class="chip">Backend</span>
+            </div>
+
+            <div class="proj-foot">
+              <span class="stamp">Lead flow</span>
+              <div class="proj-links">
+                <a href="https://github.com/nicolaspereirasilvera23-source/telebot" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- MASTERLLM -->
+          <article class="page-card reveal">
+            <span class="pin"></span>
+
+            <div class="proj-head">
+              <h3>MASTERLLM</h3>
+              <span class="proj-tag">IA / Workflow</span>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Problema</span>
+              <p>Usar IA sin estructura termina en prompts sueltos, resultados inconsistentes y contexto perdido.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Solución</span>
+              <p>Sistema de roles, prompts y flujo de trabajo para ordenar cómo se usa IA en tareas técnicas y creativas.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Aprendizaje</span>
+              <p>Transformar ideas, pseudocódigo y contexto en instrucciones reutilizables para trabajar mejor con modelos LLM.</p>
+            </div>
+
+            <div class="proj-stack">
+              <span class="chip">IA</span>
+              <span class="chip">Prompts</span>
+              <span class="chip">Agentes</span>
+              <span class="chip">Workflow</span>
+            </div>
+
+            <div class="proj-foot">
+              <span class="stamp">AI assisted</span>
+              <div class="proj-links">
+                <a href="https://github.com/nicolaspereirasilvera23-source/ai-roltext-project" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section-alt" id="stack">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">03 · caja de herramientas</span>
+          <h2>Stack</h2>
+          <p>Agrupado por lo que resuelve, no por lo que suena lindo en una lista.</p>
+        </div>
+
+        <div class="stack-grid">
+          <div class="stack-card reveal">
+            <h4>Backend</h4>
+            <ul>
+              <li>Python / FastAPI</li>
+              <li>Node.js / Express</li>
+              <li>TypeScript</li>
+              <li>Diseño de APIs REST</li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>Frontend</h4>
+            <ul>
+              <li>HTML / CSS / JS</li>
+              <li>Bootstrap</li>
+              <li>React <em class="muted-em">(en aprendizaje)</em></li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>Bases de datos</h4>
+            <ul>
+              <li>PostgreSQL</li>
+              <li>Supabase</li>
+              <li>SQLite</li>
+              <li>MongoDB <em class="muted-em">(en aprendizaje)</em></li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>Testing</h4>
+            <ul>
+              <li>Postman</li>
+              <li>Pytest</li>
+              <li>Playwright</li>
+              <li>QA manual</li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>Herramientas</h4>
+            <ul>
+              <li>Git / GitHub</li>
+              <li>VS Code</li>
+              <li>Cursor</li>
+              <li>Terminal</li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>Cloud</h4>
+            <ul>
+              <li>Render</li>
+              <li>Supabase</li>
+              <li>Cloudinary</li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>Automatización</h4>
+            <ul>
+              <li>Scripts con Python</li>
+              <li>Bots de Telegram</li>
+              <li>Google Sheets / Apps Script</li>
+            </ul>
+          </div>
+
+          <div class="stack-card reveal">
+            <h4>IA</h4>
+            <ul>
+              <li>Ingeniería de prompts</li>
+              <li>Agentes</li>
+              <li>Flujos con LLM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCIA ============ -->
+    <section id="experiencia">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">04 · bitácora</span>
+          <h2>Experiencia</h2>
+          <p>No es una carrera lineal en tech todavía. Es una base real sobre la que estoy construyendo una.</p>
+        </div>
+
+        <div class="exp-entries">
+          <div class="exp-entry reveal">
+            <div class="exp-date">2026 — presente</div>
+            <div class="exp-role">
+              <h3>Backend Developer</h3>
+              <div class="exp-org">Qubik Timer · Equipo open source</div>
+              <ul>
+                <li>Trabajo en backend con NestJS y TypeScript dentro de un equipo colaborativo.</li>
+                <li>Participación en arquitectura, Git Flow, ramas feature, PRs y coordinación con frontend, QA y DB.</li>
+                <li>Aprendizaje práctico de trabajo en equipo, comunicación técnica y revisión de código.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <div class="exp-date">2026</div>
+            <div class="exp-role">
+              <h3>Software Developer Freelance</h3>
+              <div class="exp-org">QRLY · Álbum QR para evento familiar</div>
+              <ul>
+                <li>Desarrollé una solución digital para centralizar fotos de un cumpleaños de 15 mediante QR.</li>
+                <li>Trabajé flujo de usuario, backend, almacenamiento de archivos y despliegue.</li>
+                <li>Convertí una necesidad concreta en un producto funcional para un caso real.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <div class="exp-date">feb 2024 — presente</div>
+            <div class="exp-role">
+              <h3>Administrador / Coordinador</h3>
+              <div class="exp-org">Club Suárez Vóley · Joaquín Suárez, Uruguay</div>
+              <ul>
+                <li>Gestión de inscripciones, cronogramas, comunicación interna y procesos administrativos.</li>
+                <li>Detección de tareas repetitivas y oportunidades para automatizar procesos.</li>
+                <li>Experiencia coordinando personas, datos y operación real fuera del “localhost”.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <div class="exp-date">2026</div>
+            <div class="exp-role">
+              <h3>Formación en desarrollo</h3>
+              <div class="exp-org">Backend, APIs, testing y arquitectura</div>
+              <ul>
+                <li>Aprendizaje continuo en Python, TypeScript, Node.js, FastAPI, NestJS y bases de datos.</li>
+                <li>Práctica con proyectos reales, documentación, pseudocódigo y herramientas de IA.</li>
+                <li>Objetivo profesional: crecer como Backend Developer y Software Developer.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section-alt" id="contacto">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <span class="eyebrow">05 · contacto</span>
+          <h2>¿Construimos algo útil?</h2>
+          <p>
+            Estoy abierto a oportunidades junior/entry, proyectos freelance, automatizaciones,
+            APIs y equipos donde pueda aportar mientras sigo subiendo de nivel como dev.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:nicolas.psilvera@gmail.com">Enviar mail</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>© 2026 Nicolás Pereira. Built with criterio, café y commits decentes.</p>
+      <p class="status">status: available_for_work</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
