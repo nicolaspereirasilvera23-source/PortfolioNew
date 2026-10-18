@@ -471,13 +471,21 @@ section{ padding:96px 0; position:relative; }
   gap:14px;
   font-size:13.5px;
   font-weight:700;
+  flex-wrap:wrap;
 }
 .proj-links a{
   display:inline-flex; align-items:center; gap:5px;
   color:var(--ink);
   border-bottom:2px solid var(--violet);
+  padding-bottom:1px;
+  transition:color .2s ease, border-color .2s ease;
 }
-.proj-links a:hover{ color:var(--violet-deep); }
+.proj-links a:hover{ color:var(--violet-deep); border-color:var(--violet-deep); }
+.proj-links a.live-link{
+  color:var(--violet-deep);
+  font-weight:800;
+  border-bottom:2px solid var(--violet-deep);
+}
 
 .margin-note{
   position:absolute;
@@ -601,23 +609,153 @@ section{ padding:96px 0; position:relative; }
 }
 .contact .wrap{ position:relative; z-index:2; }
 .contact .eyebrow{ color:var(--violet-soft); }
-.contact h2{ color:var(--beige); }
-.contact p.lead{ color:#C8C1D3; max-width:52ch; margin-top:14px; font-size:17px; }
-.contact-grid{
-  margin-top:40px;
+.contact h2{ color:var(--beige); margin-top:8px; }
+.contact-layout{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:18px;
+  grid-template-columns:1fr 1.15fr;
+  gap:44px;
+  align-items:start;
+}
+.contact-stack-list{
+  margin-top:28px;
+  display:grid;
+  gap:14px;
 }
 .contact-card{
-  border:1.5px solid rgba(237,227,205,0.25);
+  display:block;
+  border:1.5px solid rgba(237,227,205,0.22);
   border-radius:6px;
-  padding:22px;
+  padding:20px;
+  background:rgba(237,227,205,0.02);
   transition:border-color .2s ease, transform .2s ease, background .2s ease;
+  color:inherit;
+  text-decoration:none;
 }
-.contact-card:hover{ border-color:var(--violet-soft); transform:translateY(-3px); background:rgba(237,227,205,0.04); }
-.contact-card .k{ font-size:12px; color:#9891A3; text-transform:uppercase; letter-spacing:.05em; font-weight:700; margin-bottom:8px; }
-.contact-card .v{ font-size:16px; font-weight:600; display:flex; align-items:center; gap:8px; }
+.contact-card:hover{
+  border-color:var(--violet-soft);
+  transform:translateY(-3px);
+  background:rgba(237,227,205,0.06);
+}
+.contact-card .k{ font-size:12px; color:#9891A3; text-transform:uppercase; letter-spacing:.05em; font-weight:700; margin-bottom:6px; }
+.contact-card .v{ font-size:15px; font-weight:600; display:flex; align-items:center; gap:8px; color:var(--beige); word-break:break-word; }
+
+/* ---------- Interactive Email Card (FastAPI + Resend) ---------- */
+.email-card{
+  background:#F7F1E2;
+  border:1.5px solid var(--ink);
+  border-radius:4px;
+  padding:32px 28px 26px;
+  box-shadow:6px 6px 0 var(--violet);
+  position:relative;
+  color:var(--ink);
+}
+.email-card .pin{
+  position:absolute;
+  top:-12px; left:28px;
+  width:32px; height:32px;
+  border-radius:50%;
+  background:var(--violet);
+  border:2px solid var(--ink);
+}
+.email-card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:6px;
+}
+.card-eyebrow{
+  display:block;
+  font-family:'Caveat', cursive;
+  font-size:16px;
+  font-weight:700;
+  color:var(--violet-deep);
+}
+.email-card h3{
+  font-size:20px;
+  color:var(--ink);
+  margin-top:2px;
+}
+.stamp-mini{
+  font-family:'Caveat', cursive;
+  font-weight:700;
+  font-size:14px;
+  color:var(--violet-deep);
+  border:1.5px solid var(--violet-deep);
+  border-radius:20px;
+  padding:2px 8px;
+  transform:rotate(-3deg);
+  white-space:nowrap;
+}
+.email-card p.form-sub{
+  font-size:13.8px;
+  color:var(--ink-soft);
+  margin-bottom:18px;
+  line-height:1.45;
+}
+.email-form{
+  display:grid;
+  gap:13px;
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.form-group label{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--ink);
+}
+.form-input{
+  width:100%;
+  padding:10px 12px;
+  border:1.5px solid var(--ink);
+  border-radius:4px;
+  background:#fff;
+  font-family:'Inter', sans-serif;
+  font-size:14px;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.form-input:focus{
+  border-color:var(--violet);
+  box-shadow:0 0 0 3px var(--violet-soft);
+}
+.email-form textarea.form-input{
+  resize:vertical;
+  min-height:92px;
+}
+.email-form button.btn{
+  width:100%;
+  justify-content:center;
+  cursor:pointer;
+  margin-top:6px;
+}
+.form-feedback{
+  font-size:13.5px;
+  font-weight:600;
+  min-height:22px;
+  line-height:1.4;
+  margin-top:2px;
+}
+.form-feedback.success{
+  color:#15803d;
+}
+.form-feedback.error{
+  color:#b91c1c;
+}
+.form-feedback.loading{
+  color:var(--violet-deep);
+}
 
 /* ---------- Footer ---------- */
 footer{
@@ -649,19 +787,8 @@ footer{
   .projects-grid{ grid-template-columns:1fr; }
   .stack-grid{ grid-template-columns:repeat(2, 1fr); }
   .edu-grid{ grid-template-columns:1fr; }
-  .contact-grid{ grid-template-columns:1fr; }
+  .contact-layout{ grid-template-columns:1fr; gap:36px; }
   .nav-links{ display:none; }
-  .menu-toggle{
-    display:flex; align-items:center; justify-content:center;
-    width:36px; height:36px; border:1.5px solid var(--ink); border-radius:8px;
-  }
-}
-@media (max-width: 560px){
-  .exp-entry{ grid-template-columns:1fr; gap:8px; }
-  .avatar-frame{ width:210px; height:210px; }
-  section{ padding:64px 0; }
-}
-@media (max-width: 920px) {
   .nav-links.is-open {
     display: flex;
     position: absolute;
@@ -674,5 +801,23 @@ footer{
     flex-direction: column;
     gap: 14px;
     box-shadow: 4px 4px 0 #6A46E5;
+    z-index: 100;
   }
+  .menu-toggle{
+    display:flex; align-items:center; justify-content:center;
+    width:36px; height:36px;
+    border:1.5px solid var(--ink);
+    border-radius:8px;
+    background:transparent;
+    cursor:pointer;
+    color:var(--ink);
+  }
+}
+@media (max-width: 560px){
+  .exp-entry{ grid-template-columns:1fr; gap:8px; }
+  .avatar-frame{ width:210px; height:210px; }
+  section{ padding:64px 0; }
+  .stack-grid{ grid-template-columns:1fr; }
+  .form-row{ grid-template-columns:1fr; }
+  .email-card{ padding:26px 18px 22px; }
 }

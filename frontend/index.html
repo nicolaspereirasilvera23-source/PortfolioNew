@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicolás Pereira — Software Developer</title>
   <meta name="description" content="Portfolio de Nicolás Pereira, Software Developer enfocado en backend, APIs, automatización e IA aplicada.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nicolás Pereira — Software Developer">
+  <meta property="og:description" content="Software Developer enfocado en backend, APIs, automatización e IA aplicada. Sistemas con criterio y código mantenible.">
+  <meta property="og:image" content="yop.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nicolás Pereira — Software Developer">
+  <meta name="twitter:description" content="Software Developer enfocado en backend, APIs, automatización e IA aplicada. Sistemas con criterio y código mantenible.">
+  <meta name="twitter:image" content="yop.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +29,7 @@
         Nicolás Pereira
       </a>
 
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#stack">Stack</a>
@@ -40,7 +50,7 @@
           </svg>
         </a>
 
-        <button class="menu-toggle" aria-label="Menú" id="menuToggle">
+        <button class="menu-toggle" aria-label="Menú" id="menuToggle" aria-expanded="false" aria-controls="navLinks">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 6h18M3 12h18M3 18h18"/>
           </svg>
@@ -154,7 +164,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">02 · hojas del cuaderno</span>
           <h2>Proyectos destacados</h2>
-          <p>Cuatro proyectos con narrativa clara: problema, solución, stack y aprendizaje. No “CRUD número 47”, por suerte.</p>
+          <p>Proyectos con casos reales, código abierto y despliegues en producción. No “CRUD número 47”, por suerte.</p>
         </div>
 
         <div class="projects-grid">
@@ -170,17 +180,17 @@
 
             <div class="proj-block">
               <span class="label">Problema</span>
-              <p>En un cumpleaños de 15 familiar, las fotos del evento podían quedar dispersas entre celulares, chats y archivos reenviados.</p>
+              <p>En un cumpleaños de 15 familiar, las fotos del evento quedaban dispersas entre celulares, chats y archivos reenviados con compresión.</p>
             </div>
 
             <div class="proj-block">
               <span class="label">Solución</span>
-              <p>Álbum colaborativo por QR: los invitados escanean, acceden al evento y suben sus fotos desde el celular.</p>
+              <p>Álbum colaborativo por QR: los invitados escanean, entran al evento al instante y suben fotos o videos sin necesidad de registrarse.</p>
             </div>
 
             <div class="proj-block">
               <span class="label">Aprendizaje</span>
-              <p>Convertir una necesidad familiar concreta en una solución freelance con flujo de usuario, backend y manejo de archivos.</p>
+              <p>Diseño de arquitectura de subida de archivos, integración con Cloudinary, almacenamiento relacional en Supabase y UX móvil sin fricción.</p>
             </div>
 
             <div class="proj-stack">
@@ -194,46 +204,129 @@
             <div class="proj-foot">
               <span class="stamp">Real use case</span>
               <div class="proj-links">
-                <a href="https://github.com/nicolaspereirasilvera23-source/AlbumQR-WEb" target="_blank" rel="noopener">Repo →</a>
+                <a href="https://github.com/nicolaspereirasilvera23-source/QRLY-AlbumWeb" target="_blank" rel="noopener">Repo →</a>
               </div>
             </div>
           </article>
 
-          <!-- AttendanceAPI -->
+          <!-- Museo Ezequiel Zamora (Freelance) -->
           <article class="page-card reveal">
             <span class="pin"></span>
 
             <div class="proj-head">
-              <h3>AttendanceAPI</h3>
-              <span class="proj-tag">Backend API</span>
+              <h3>Museo Ezequiel Zamora</h3>
+              <span class="proj-tag">Freelance · Jul — Presente</span>
             </div>
 
             <div class="proj-block">
               <span class="label">Problema</span>
-              <p>Registrar asistencias manualmente consume tiempo, genera errores y dificulta consultar datos después.</p>
+              <p>El museo y centro cultural patrimonial en Venezuela requería una plataforma pública para coordinar visitas y una herramienta interna para administrar exhibiciones, registros y contactos.</p>
             </div>
 
             <div class="proj-block">
               <span class="label">Solución</span>
-              <p>API para gestionar registros de asistencia, pensada para centralizar datos y exponer endpoints claros.</p>
+              <p>Ecosistema fullstack: web pública accesible (HTML, CSS), dashboard administrativo moderno (React, Tailwind CSS) y backend en Go (Golang) con MongoDB, multimedia en Cloudinary y correos transaccionales con Resend.</p>
             </div>
 
             <div class="proj-block">
               <span class="label">Aprendizaje</span>
-              <p>Diseñar endpoints, separar responsabilidades y trabajar lógica de negocio con una estructura mantenible.</p>
+              <p>Diseño de arquitectura con microservicios en Go, desacoplamiento entre el sitio público y el CMS para operadores, y pipelines automatizados de entrega multimedia y correos.</p>
             </div>
 
             <div class="proj-stack">
-              <span class="chip">Python</span>
-              <span class="chip">FastAPI</span>
-              <span class="chip">SQLite</span>
-              <span class="chip">REST API</span>
+              <span class="chip">Go (Golang)</span>
+              <span class="chip">React</span>
+              <span class="chip">Tailwind CSS</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">Cloudinary</span>
+              <span class="chip">Resend</span>
+              <span class="chip">HTML/CSS</span>
+            </div>
+
+            <div class="proj-foot">
+              <span class="stamp">Live in prod</span>
+              <div class="proj-links">
+                <a class="live-link" href="https://casa-pulperia-museo.vercel.app/" target="_blank" rel="noopener">Demo en vivo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- NEZT Studio -->
+          <article class="page-card reveal">
+            <span class="pin"></span>
+
+            <div class="proj-head">
+              <h3>NEZT</h3>
+              <span class="proj-tag">Plataforma Web / B2B</span>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Problema</span>
+              <p>Presentar capacidades de ingeniería, automatización y soluciones de software escalables bajo un lenguaje visual corporativo de alta precisión.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Solución</span>
+              <p>Plataforma web con estética oscura técnica, cambio de tema dinámico (dark/light), soporte multi-idioma (EN/ES) y catálogo de servicios y Labs.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Aprendizaje</span>
+              <p>Desarrollo con Next.js App Router, componentes modulares, animaciones sutiles orientadas al rendimiento y arquitectura de diseño orientada a B2B.</p>
+            </div>
+
+            <div class="proj-stack">
+              <span class="chip">Next.js</span>
+              <span class="chip">React</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Tailwind CSS</span>
+              <span class="chip">i18n</span>
+            </div>
+
+            <div class="proj-foot">
+              <span class="stamp">Live in prod</span>
+              <div class="proj-links">
+                <a class="live-link" href="https://websitie-startup.vercel.app/" target="_blank" rel="noopener">Demo en vivo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Assistance System (NestJS Monorepo) -->
+          <article class="page-card reveal">
+            <span class="pin"></span>
+
+            <div class="proj-head">
+              <h3>Assistance System</h3>
+              <span class="proj-tag">Monorepo / Backend Core</span>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Problema</span>
+              <p>Registrar y conciliar asistencias de 80 personas manualmente en papel consume horas, produce errores y dificulta el seguimiento de socios.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Solución</span>
+              <p>Monorepo integral con arquitectura backend estructurada, capa de persistencia relacional con ORM y endpoints robustos para gestión y auditoría.</p>
+            </div>
+
+            <div class="proj-block">
+              <span class="label">Aprendizaje</span>
+              <p>Diseño de arquitectura modular con NestJS, TypeScript estricto, modelado de esquema relacional y migraciones con Prisma ORM sobre Supabase.</p>
+            </div>
+
+            <div class="proj-stack">
+              <span class="chip">NestJS</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Prisma ORM</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Monorepo</span>
             </div>
 
             <div class="proj-foot">
               <span class="stamp">Backend core</span>
               <div class="proj-links">
-                <a href="https://github.com/nicolaspereirasilvera23-source/attendance-api" target="_blank" rel="noopener">Repo →</a>
+                <a href="https://github.com/nicolaspereirasilvera23-source/assistance-system-web" target="_blank" rel="noopener">Repo →</a>
               </div>
             </div>
           </article>
@@ -243,75 +336,37 @@
             <span class="pin"></span>
 
             <div class="proj-head">
-              <h3>Telegram Lead Bot</h3>
-              <span class="proj-tag">Automatización</span>
+              <h3>Orbyn Lead Bot</h3>
+              <span class="proj-tag">Automatización / IA</span>
             </div>
 
             <div class="proj-block">
               <span class="label">Problema</span>
-              <p>Responder y ordenar potenciales clientes de forma manual escala tan bien como una tostadora en Kubernetes.</p>
+              <p>Responder y calificar clientes potenciales a mano en mensajería no escala y genera retrasos en el seguimiento comercial.</p>
             </div>
 
             <div class="proj-block">
               <span class="label">Solución</span>
-              <p>Bot de Telegram para captar leads, responder flujos iniciales y estructurar información comercial.</p>
+              <p>Bot de Telegram que extrae información del lead vía LLM, aplica reglas de calificación (ICP) en Python y guarda los datos en Google Sheets.</p>
             </div>
 
             <div class="proj-block">
               <span class="label">Aprendizaje</span>
-              <p>Automatizar comunicación, diseñar flujos conversacionales y reducir fricción en procesos comerciales.</p>
+              <p>Construir flujos conversacionales, integración con Telegram Bot API, análisis con LLM y automatización de pipelines a Google Sheets con Apps Script.</p>
             </div>
 
             <div class="proj-stack">
-              <span class="chip">Telegram Bot</span>
-              <span class="chip">Automation</span>
-              <span class="chip">Leads</span>
-              <span class="chip">Backend</span>
+              <span class="chip">Python</span>
+              <span class="chip">Telegram API</span>
+              <span class="chip">LLM Parsing</span>
+              <span class="chip">Google Sheets</span>
+              <span class="chip">Apps Script</span>
             </div>
 
             <div class="proj-foot">
               <span class="stamp">Lead flow</span>
               <div class="proj-links">
-                <a href="https://github.com/nicolaspereirasilvera23-source/telebot" target="_blank" rel="noopener">Repo →</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- MASTERLLM -->
-          <article class="page-card reveal">
-            <span class="pin"></span>
-
-            <div class="proj-head">
-              <h3>MASTERLLM</h3>
-              <span class="proj-tag">IA / Workflow</span>
-            </div>
-
-            <div class="proj-block">
-              <span class="label">Problema</span>
-              <p>Usar IA sin estructura termina en prompts sueltos, resultados inconsistentes y contexto perdido.</p>
-            </div>
-
-            <div class="proj-block">
-              <span class="label">Solución</span>
-              <p>Sistema de roles, prompts y flujo de trabajo para ordenar cómo se usa IA en tareas técnicas y creativas.</p>
-            </div>
-
-            <div class="proj-block">
-              <span class="label">Aprendizaje</span>
-              <p>Transformar ideas, pseudocódigo y contexto en instrucciones reutilizables para trabajar mejor con modelos LLM.</p>
-            </div>
-
-            <div class="proj-stack">
-              <span class="chip">IA</span>
-              <span class="chip">Prompts</span>
-              <span class="chip">Agentes</span>
-              <span class="chip">Workflow</span>
-            </div>
-
-            <div class="proj-foot">
-              <span class="stamp">AI assisted</span>
-              <div class="proj-links">
-                <a href="https://github.com/nicolaspereirasilvera23-source/ai-roltext-project" target="_blank" rel="noopener">Repo →</a>
+                <a href="https://github.com/nicolaspereirasilvera23-source/Telegram-Bot-Leads" target="_blank" rel="noopener">Repo →</a>
               </div>
             </div>
           </article>
@@ -333,29 +388,33 @@
           <div class="stack-card reveal">
             <h4>Backend</h4>
             <ul>
+              <li>Go (Golang)</li>
+              <li>NestJS</li>
               <li>Python / FastAPI</li>
               <li>Node.js / Express</li>
-              <li>TypeScript</li>
-              <li>Diseño de APIs REST</li>
+              <li>TypeScript / APIs REST</li>
             </ul>
           </div>
 
           <div class="stack-card reveal">
             <h4>Frontend</h4>
             <ul>
-              <li>HTML / CSS / JS</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Tailwind CSS</li>
+              <li>HTML5 / CSS3 / JavaScript</li>
               <li>Bootstrap</li>
-              <li>React <em class="muted-em">(en aprendizaje)</em></li>
             </ul>
           </div>
 
           <div class="stack-card reveal">
             <h4>Bases de datos</h4>
             <ul>
+              <li>MongoDB</li>
               <li>PostgreSQL</li>
               <li>Supabase</li>
+              <li>Prisma ORM</li>
               <li>SQLite</li>
-              <li>MongoDB <em class="muted-em">(en aprendizaje)</em></li>
             </ul>
           </div>
 
@@ -375,16 +434,18 @@
               <li>Git / GitHub</li>
               <li>VS Code</li>
               <li>Cursor</li>
-              <li>Terminal</li>
+              <li>Terminal / Bash</li>
             </ul>
           </div>
 
           <div class="stack-card reveal">
-            <h4>Cloud</h4>
+            <h4>Cloud & Servicios</h4>
             <ul>
+              <li>Resend API</li>
+              <li>Cloudinary</li>
+              <li>Vercel</li>
               <li>Render</li>
               <li>Supabase</li>
-              <li>Cloudinary</li>
             </ul>
           </div>
 
@@ -419,6 +480,19 @@
         </div>
 
         <div class="exp-entries">
+          <div class="exp-entry reveal">
+            <div class="exp-date">jul 2024 — presente</div>
+            <div class="exp-role">
+              <h3>Fullstack Developer Freelance</h3>
+              <div class="exp-org">Museo Ezequiel Zamora Casa Pulpería · Villa de Cura, Venezuela</div>
+              <ul>
+                <li>Desarrollo de la web pública institucional (HTML, CSS) y del dashboard administrativo (React, Tailwind CSS).</li>
+                <li>Diseño e implementación de API backend en Go con base de datos en MongoDB y almacenamiento multimedia en Cloudinary.</li>
+                <li>Integración de notificaciones y correo transaccional utilizando la API de Resend.</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="exp-entry reveal">
             <div class="exp-date">2026 — presente</div>
             <div class="exp-role">
@@ -475,21 +549,82 @@
     </section>
 
     <!-- ============ CONTACTO ============ -->
-    <section class="section-alt" id="contacto">
+    <section class="contact" id="contacto">
       <div class="wrap">
-        <div class="contact-card reveal">
-          <span class="eyebrow">05 · contacto</span>
-          <h2>¿Construimos algo útil?</h2>
-          <p>
-            Estoy abierto a oportunidades junior/entry, proyectos freelance, automatizaciones,
-            APIs y equipos donde pueda aportar mientras sigo subiendo de nivel como dev.
-          </p>
+        <div class="contact-layout">
 
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:nicolas.psilvera@gmail.com">Enviar mail</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noopener">GitHub</a>
+          <!-- Columna izquierda: Información directa -->
+          <div class="contact-info reveal">
+            <span class="eyebrow">05 · contacto</span>
+            <h2>¿Construimos algo útil?</h2>
+            <p class="lead">
+              Estoy abierto a oportunidades junior/entry, proyectos freelance, automatizaciones,
+              APIs y equipos donde pueda aportar mientras sigo subiendo de nivel como dev.
+            </p>
+
+            <div class="contact-stack-list">
+              <a class="contact-card" href="mailto:nicolas.psilvera@gmail.com">
+                <div class="k">Email directo</div>
+                <div class="v">nicolas.psilvera@gmail.com</div>
+              </a>
+              <a class="contact-card" href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noopener">
+                <div class="k">LinkedIn</div>
+                <div class="v">nicolas-psilvera ↗</div>
+              </a>
+              <a class="contact-card" href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noopener">
+                <div class="k">GitHub</div>
+                <div class="v">nicolaspereirasilvera23 ↗</div>
+              </a>
+            </div>
           </div>
+
+          <!-- Columna derecha: Tarjeta interactiva de envío con FastAPI + Resend -->
+          <div class="contact-form-wrapper reveal">
+            <div class="email-card">
+              <span class="pin"></span>
+              <div class="email-card-head">
+                <div>
+                  <span class="card-eyebrow">FastAPI · Resend API</span>
+                  <h3>Enviar correo directo</h3>
+                </div>
+                <span class="stamp-mini">API Ready ✓</span>
+              </div>
+              <p class="form-sub">Despacha tu mensaje en tiempo real a mi bandeja de entrada mediante microservicio en Python.</p>
+
+              <form class="email-form" id="contactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName">Tu nombre</label>
+                    <input type="text" id="contactName" name="name" class="form-input" placeholder="Ej. Ana Pérez" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactEmail">Tu email</label>
+                    <input type="email" id="contactEmail" name="email" class="form-input" placeholder="ana@empresa.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactSubject">Asunto (opcional)</label>
+                  <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Propuesta de proyecto / consulta">
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage">Mensaje</label>
+                  <textarea id="contactMessage" name="message" class="form-input" rows="4" placeholder="Hola Nicolás, me gustaría hablar sobre..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="sendBtn">
+                  <span>Enviar mensaje</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+
+                <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -497,9 +632,9 @@
   </main>
 
   <footer>
-    <div class="wrap footer-inner">
+    <div class="wrap footer-row">
       <p>© 2026 Nicolás Pereira. Built with criterio, café y commits decentes.</p>
-      <p class="status">status: available_for_work</p>
+      <p class="footer-tag">status: available_for_work</p>
     </div>
   </footer>
 
