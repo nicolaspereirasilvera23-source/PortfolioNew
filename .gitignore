@@ -3,3 +3,6 @@ favicon.svg
 yop.jpg
 CV_Nicolas_Pereira_AnalistaProgramador.pdf
 akumiPersonaje.png
+client/backend/node_modules/
+client/backend/dist/
+client/backend/.env

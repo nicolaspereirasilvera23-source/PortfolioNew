@@ -62,7 +62,7 @@ if (toggle && links) {
   });
 }
 
-// Contact Form — Envío vía endpoint FastAPI + Resend
+// Contact Form — Envío vía endpoint NestJS + Resend
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 const sendBtn = document.getElementById('sendBtn');
@@ -92,10 +92,10 @@ if (contactForm && formFeedback && sendBtn) {
     const originalBtnHtml = sendBtn.innerHTML;
     sendBtn.innerHTML = '<span>Enviando mensaje...</span>';
     formFeedback.className = 'form-feedback loading';
-    formFeedback.textContent = 'Despachando correo a través de FastAPI y Resend...';
+    formFeedback.textContent = 'Despachando correo a través de NestJS y Resend...';
 
-    // URL del endpoint: local por defecto (puerto 8000) o variable configurada
-    const apiUrl = window.PORTFOLIO_API_URL || 'http://localhost:8000/api/send-email';
+    // URL del endpoint: local por defecto (puerto 3000) o variable configurada
+    const apiUrl = window.PORTFOLIO_API_URL || 'http://localhost:3000/api/send-email';
 
     try {
       const response = await fetch(apiUrl, {
@@ -128,7 +128,7 @@ if (contactForm && formFeedback && sendBtn) {
       }
     } catch (err) {
       formFeedback.className = 'form-feedback error';
-      formFeedback.innerHTML = 'Microservicio local no disponible. Inicia el backend con <code>uvicorn main:app --reload</code> en <code>/backend</code> o escríbeme directo a <a href="mailto:nicolas.psilvera@gmail.com" style="color:var(--violet-deep);font-weight:700;">nicolas.psilvera@gmail.com</a>';
+      formFeedback.innerHTML = 'Microservicio local no disponible. Inicia el backend con <code>npm run start:dev</code> en <code>/backend</code> o escríbeme directo a <a href="mailto:nicolas.psilvera@gmail.com" style="color:var(--violet-deep);font-weight:700;">nicolas.psilvera@gmail.com</a>';
     } finally {
       sendBtn.disabled = false;
       sendBtn.innerHTML = originalBtnHtml;
