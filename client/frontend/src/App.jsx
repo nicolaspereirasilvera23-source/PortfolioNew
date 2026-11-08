@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 import './hero-editorial.css';
+const GMAIL_COMPOSE_URL = 'https://mail.google.com/mail/?view=cm&fs=1&to=nicolas.psilvera%40gmail.com&su=Contacto%20desde%20el%20portfolio';
 const LogoLoop = lazy(() => import('./components/LogoLoop.jsx').then(module => ({ default:module.LogoLoop })));
 const Lanyard = lazy(() => import('./components/Lanyard.jsx').then(module => ({ default:module.Lanyard })));
 const FluxLines = lazy(() => import('./components/FluxLines.jsx').then(module => ({ default:module.FluxLines })));
@@ -73,7 +74,7 @@ function App() {
       <nav className={menuOpen ? 'nav-links nav-open' : 'nav-links'} aria-label="Navegación principal">
         {[['Sobre mí','#sobre-mi'],['Proyectos','#proyectos'],['Trayectoria','#trayectoria'],['Contacto','#contacto']].map(([label,href]) => <a key={href} href={href} onClick={()=>setMenuOpen(false)}>{label}</a>)}
       </nav>
-      <a className="header-contact" href="mailto:nicolas.psilvera@gmail.com">Hablemos <ArrowUpRight size={15}/></a>
+      <a className="header-contact" href={GMAIL_COMPOSE_URL} target="_blank" rel="noreferrer">Hablemos <ArrowUpRight size={15}/></a>
       <button className="menu-button" onClick={()=>setMenuOpen(!menuOpen)} aria-label={menuOpen?'Cerrar menú':'Abrir menú'} aria-expanded={menuOpen}>{menuOpen?<X/>:<Menu/>}</button>
     </header>
 
@@ -91,7 +92,7 @@ function App() {
         </div>
         <div className="hero-bottomline">
           <p>Fullstack engineering<br/><span>TypeScript · Python · PostgreSQL</span></p>
-          <div className="hero-actions"><a className="button-primary" href="#proyectos">Explorar proyectos <ArrowDown size={16}/></a><a className="text-link" href="mailto:nicolas.psilvera@gmail.com">Contactarme <ArrowUpRight size={15}/></a></div>
+          <div className="hero-actions"><a className="button-primary" href="#proyectos">Explorar proyectos <ArrowDown size={16}/></a><a className="text-link" href={GMAIL_COMPOSE_URL} target="_blank" rel="noreferrer">Contactarme <ArrowUpRight size={15}/></a></div>
         </div>
       </section>
 
@@ -129,7 +130,7 @@ function App() {
         <div className="education-line"><span>FORMACIÓN CONTINUA</span><p>Backend · APIs · testing · arquitectura · TypeScript · NestJS · bases de datos</p></div>
       </section>
 
-      <section className="contact-section" id="contacto"><div className="section-kicker"><span>05 — PRÓXIMO PASO</span><span>MONTEVIDEO, URUGUAY</span></div><div className="contact-body"><p className="overline">¿TENÉS UN PROBLEMA INTERESANTE?</p><h2>Hagamos que<br/><em>funcione.</em></h2><div className="contact-layout"><div><a className="contact-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=nicolas.psilvera%40gmail.com&su=Contacto%20desde%20el%20portfolio" target="_blank" rel="noreferrer" aria-label="Escribirme por Gmail">Escribime <ArrowUpRight size={22}/></a><p className="contact-email">nicolas.psilvera@gmail.com</p></div><p className="contact-note">Se abrirá Gmail con mi dirección y el asunto listos para que me escribas.</p></div></div><div className="contact-bottom"><span>DISPONIBLE PARA OPORTUNIDADES Y PROYECTOS FREELANCE</span><div><a href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href="mailto:nicolas.psilvera@gmail.com" aria-label="Email"><Mail/></a></div></div></section>
+      <section className="contact-section" id="contacto"><div className="section-kicker"><span>05 — PRÓXIMO PASO</span><span>MONTEVIDEO, URUGUAY</span></div><div className="contact-body"><p className="overline">¿TENÉS UN PROBLEMA INTERESANTE?</p><h2>Hagamos que<br/><em>funcione.</em></h2><div className="contact-layout"><div><a className="contact-cta" href={GMAIL_COMPOSE_URL} target="_blank" rel="noreferrer" aria-label="Escribirme por Gmail">Escribime <ArrowUpRight size={22}/></a><p className="contact-email">nicolas.psilvera@gmail.com</p></div><p className="contact-note">Se abrirá Gmail con mi dirección y el asunto listos para que me escribas.</p></div></div><div className="contact-bottom"><span>DISPONIBLE PARA OPORTUNIDADES Y PROYECTOS FREELANCE</span><div><a href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href={GMAIL_COMPOSE_URL} target="_blank" rel="noreferrer" aria-label="Email"><Mail/></a></div></div></section>
     </main>
     <footer><a className="wordmark" href="#inicio"><span className="wordmark-mark">NP</span><span>Nicolás Pereira</span></a><span>HECHO CON CURIOSIDAD · © 2026</span><a href="#inicio">VOLVER ARRIBA ↑</a></footer>
   </>;
