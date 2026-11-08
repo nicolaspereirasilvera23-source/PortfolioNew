@@ -266,8 +266,8 @@
   }
 
   .hero-identity h1 {
-    top: 62%;
-    font-size: clamp(42px, 10.7vw, 76px);
+    top: 10%;
+    font-size: clamp(32px, 10.6vw, 58px);
   }
 
   .hero-editorial .portrait-wrap {
