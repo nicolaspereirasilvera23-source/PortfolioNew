@@ -73,7 +73,7 @@ function ContactForm() {
     const values = Object.fromEntries(new FormData(form));
     setSending(true); setStatus({ kind:'loading', message:'Enviando mensaje mediante NestJS y Resend…' });
     try {
-      const endpoint = import.meta.env.VITE_PORTFOLIO_API_URL || 'http://localhost:3000/api/send-email';
+      const endpoint = import.meta.env.VITE_PORTFOLIO_API_URL || 'https://portfolio-api-nicolaspereirasilvera23-sources-projects.vercel.app/api/send-email';
       const response = await fetch(endpoint, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify(values) });
       const result = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(result.detail || result.message || 'No se pudo enviar el mensaje.');
