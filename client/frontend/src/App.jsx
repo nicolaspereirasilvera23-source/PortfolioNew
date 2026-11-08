@@ -48,13 +48,7 @@ function StackMarquee({ logos }) {
 }
 
 function HeroPortrait() {
-  const [enabled, setEnabled] = useState(false);
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = window.setTimeout(() => setEnabled(true), 650);
-    return () => window.clearTimeout(timer);
-  }, []);
-  return <div className="portrait-wrap"><img className="lanyard-fallback" src="/assets/yop.jpg" alt="Foto de Nicolás Pereira"/>{enabled && <Suspense fallback={null}><Lanyard /></Suspense>}<div className="portrait-label"><span>NICOLÁS PEREIRA</span><span>DEV · MONTEVIDEO</span></div><div className="orbit-note">BUILD<br/>WITH<br/>PURPOSE<span>✳</span></div></div>;
+  return <div className="portrait-wrap"><img className="lanyard-fallback" src="/assets/yop.jpg" alt="" aria-hidden="true"/><Suspense fallback={null}><Lanyard /></Suspense><div className="portrait-label"><span>NICOLÁS PEREIRA</span><span>DEV · MONTEVIDEO</span></div><div className="orbit-note">BUILD<br/>WITH<br/>PURPOSE<span>✳</span></div></div>;
 }
 
 function ContactForm() {
