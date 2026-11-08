@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowDownRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
+import './hero-editorial.css';
 const LogoLoop = lazy(() => import('./components/LogoLoop.jsx').then(module => ({ default:module.LogoLoop })));
 const Lanyard = lazy(() => import('./components/Lanyard.jsx').then(module => ({ default:module.Lanyard })));
 const FluxLines = lazy(() => import('./components/FluxLines.jsx').then(module => ({ default:module.FluxLines })));
@@ -48,7 +49,7 @@ function StackMarquee({ logos }) {
 }
 
 function HeroPortrait() {
-  return <div className="portrait-wrap"><img className="lanyard-fallback" src="/assets/yop.jpg" alt="" aria-hidden="true"/><Suspense fallback={null}><Lanyard /></Suspense><div className="portrait-label"><span>NICOLÁS PEREIRA</span><span>DEV · MONTEVIDEO</span></div><div className="orbit-note">BUILD<br/>WITH<br/>PURPOSE<span>✳</span></div></div>;
+  return <div className="portrait-wrap"><img className="lanyard-fallback" src="/assets/yop.jpg" alt="" aria-hidden="true"/><Suspense fallback={null}><Lanyard /></Suspense></div>;
 }
 
 function ContactForm() {
@@ -82,7 +83,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return <>
     <Suspense fallback={null}><FluxLines /></Suspense>
-    <header className="site-header">
+    <header className="site-header site-header-editorial">
       <a className="wordmark" href="#inicio" aria-label="Nicolás Pereira, inicio"><span className="wordmark-mark">NP</span><span>Nicolás Pereira</span></a>
       <nav className={menuOpen ? 'nav-links nav-open' : 'nav-links'} aria-label="Navegación principal">
         {[['Sobre mí','#sobre-mi'],['Proyectos','#proyectos'],['Trayectoria','#trayectoria'],['Contacto','#contacto']].map(([label,href]) => <a key={href} href={href} onClick={()=>setMenuOpen(false)}>{label}</a>)}
@@ -92,19 +93,21 @@ function App() {
     </header>
 
     <main id="inicio">
-      <section className="hero-section">
-        <div className="hero-index"><span className="status-dot"/> DISPONIBLE PARA NUEVOS PROYECTOS <span>MONTEVIDEO, UY · -34.9° / -56.2°</span></div>
-        <div className="hero-layout">
-          <div className="hero-copy">
-            <p className="overline">SOFTWARE DEVELOPER <span>—</span> BACKEND & PRODUCT ENGINEERING</p>
-            <h1>Ideas reales.<br/><em>Sistemas</em> que<br/>sí laburan.</h1>
-            <p className="hero-intro">Construyo software para resolver problemas concretos: APIs, automatización y productos digitales que funcionan más allá del localhost.</p>
-            <div className="hero-actions"><a className="button-primary" href="#proyectos">Explorar proyectos <ArrowDown size={17}/></a><a className="text-link" href="mailto:nicolas.psilvera@gmail.com">Contactarme <ArrowUpRight size={16}/></a></div>
-            <div className="hero-footnote"><span>01 / 04</span><span>DISEÑO CON INTENCIÓN. CÓDIGO CON CRITERIO.</span></div>
-          </div>
-          <HeroPortrait />
+      <section className="hero-section hero-editorial">
+        <div className="hero-meta">
+          <p>Diseño y construyo productos digitales<br/>para resolver problemas reales. <a href="#sobre-mi">Más sobre mí <ArrowUpRight size={13}/></a></p>
+          <p>Software Developer<br/>Montevideo, Uruguay</p>
         </div>
-        <a className="scroll-cue" href="#sobre-mi"><span>DESLIZÁ PARA EXPLORAR</span><ArrowDown size={15}/></a>
+        <div className="hero-layout hero-editorial-layout">
+          <div className="hero-identity">
+            <h1><span>Nicolás</span> Pereira</h1>
+            <div className="hero-lanyard-layer"><HeroPortrait /></div>
+          </div>
+        </div>
+        <div className="hero-bottomline">
+          <p>Fullstack engineering<br/><span>TypeScript · Python · PostgreSQL</span></p>
+          <div className="hero-actions"><a className="button-primary" href="#proyectos">Explorar proyectos <ArrowDown size={16}/></a><a className="text-link" href="mailto:nicolas.psilvera@gmail.com">Contactarme <ArrowUpRight size={15}/></a></div>
+        </div>
       </section>
 
       <section className="manifesto-section" id="sobre-mi">
