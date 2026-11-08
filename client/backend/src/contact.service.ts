@@ -31,10 +31,15 @@ export class ContactService {
         subject,
         html: `<div style="font-family:Arial,sans-serif;color:#221D26;line-height:1.5;max-width:600px;margin:auto;padding:24px;background:#F7F1E2;border:1px solid #221D26"><p style="color:#6A46E5;font-weight:bold">MENSAJE DE PORTFOLIO</p><h2>${escapeHtml(data.name)} te ha contactado</h2><p><strong>De:</strong> ${escapeHtml(data.name)} &lt;${escapeHtml(data.email)}&gt;</p><p><strong>Asunto:</strong> ${escapeHtml(subject)}</p><div style="white-space:pre-wrap;background:white;padding:16px;border:1px solid #D6CEBE">${escapeHtml(data.message)}</div><small>Enviado desde el portfolio de Nicolás Pereira · NestJS + Resend.</small></div>`,
       });
-      if (error) throw new Error(error.message);
+      if (error) {
+        console.error('[Resend] Email rejected:', { name: error.name, message: error.message });
+        throw new BadGatewayException(`Resend rechazó el envío: ${error.message}`);
+      }
       return { status: 'success', message: 'Correo enviado exitosamente.', data: result };
-    } catch {
-      throw new BadGatewayException('Error al enviar correo mediante la API de Resend.');
+    } catch (error) {
+      if (error instanceof BadGatewayException) throw error;
+      console.error('[Resend] Request failed:', error instanceof Error ? error.message : 'Unknown error');
+      throw new BadGatewayException('No se pudo conectar con Resend. Comprueba la API key y vuelve a intentar.');
     }
   }
 }
