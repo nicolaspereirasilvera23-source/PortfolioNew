@@ -8,7 +8,6 @@ export class ContactService {
     return {
       status: 'healthy',
       resend_configured: Boolean(process.env.RESEND_API_KEY?.trim()),
-      recipient: process.env.RECIPIENT_EMAIL ?? process.env.CONTACT_EMAIL ?? 'nicolas.psilvera@gmail.com',
     };
   }
 
