@@ -18,7 +18,16 @@ const projects = [
   { name:'QRLY', index:'09', group:'propios', image:'/assets/projects/qrly-album.jpg', type:'Producto real · SaaS', description:'Las fotos de un evento familiar quedaban dispersas entre celulares, chats y archivos comprimidos.', detail:'Álbum colaborativo por QR: los invitados entran al evento y suben fotos o videos sin registrarse.', stack:['Node.js','Express','Supabase','Cloudinary'], url:'https://github.com/nicolaspereirasilvera23-source/QRLY-AlbumWeb', action:'Ver repositorio' },
 ];
 
-const tech = ['TypeScript','React','Next.js','NestJS','Node.js','Go','Python','Tailwind CSS','PostgreSQL','MongoDB','Supabase','Prisma','Resend','Cloudinary','Vercel'];
+const tech = [
+  { name:'TypeScript', slug:'typescript' }, { name:'React', slug:'react' },
+  { name:'Next.js', slug:'nextdotjs' }, { name:'NestJS', slug:'nestjs' },
+  { name:'Node.js', slug:'nodedotjs' }, { name:'Go', slug:'go' },
+  { name:'Python', slug:'python' }, { name:'Tailwind CSS', slug:'tailwindcss' },
+  { name:'PostgreSQL', slug:'postgresql' }, { name:'MongoDB', slug:'mongodb' },
+  { name:'Supabase', slug:'supabase' }, { name:'Prisma', slug:'prisma' },
+  { name:'Resend', slug:'resend' }, { name:'Cloudinary', slug:'cloudinary' },
+  { name:'Vercel', slug:'vercel' },
+];
 
 function ProjectFolder({ project }) {
   const [open, setOpen] = useState(false);
@@ -110,27 +119,27 @@ function App() {
         </div>
       </section>
 
+      <section className="stack-section" id="stack">
+        <div className="section-kicker"><span>01 — HERRAMIENTAS</span><span>STACK EN MOVIMIENTO</span></div>
+        <div className="stack-heading"><h2>La herramienta<br/><em>correcta para el trabajo.</em></h2><p>Esta es la tecnología que aparece en mis proyectos y en mi trabajo diario.</p></div>
+        <StackMarquee logos={tech} />
+        <div className="stack-groups"><div><span>01 / BACKEND</span><p>NestJS · Node.js · Go · Python · APIs</p></div><div><span>02 / FRONTEND</span><p>React · Next.js · TypeScript · Tailwind</p></div><div><span>03 / DATA & TOOLS</span><p>PostgreSQL · MongoDB · Prisma · Supabase · Resend</p></div></div>
+      </section>
+
       <section className="manifesto-section" id="sobre-mi">
-        <div className="section-kicker"><span>01 — PUNTO DE PARTIDA</span><span>LO QUE ME MUEVE</span></div>
+        <div className="section-kicker"><span>02 — PUNTO DE PARTIDA</span><span>LO QUE ME MUEVE</span></div>
         <div className="manifesto-grid"><p className="manifesto-title">Me interesa el momento en que una tarea cotidiana se convierte en <em>una buena solución.</em></p><div className="manifesto-body"><p>Empecé por el backend para entender qué ocurre detrás de un formulario. Antes de escribir código, dibujo la arquitectura; después construyo, documento y reviso cada decisión.</p><p>He trabajado con un club, un museo, un evento familiar y equipos de software. Me gusta tomar procesos manuales y convertirlos en sistemas simples, mantenibles y útiles.</p><a className="arrow-link" href="#trayectoria">Mi recorrido <ArrowUpRight size={17}/></a></div></div>
         <div className="principles"><div><span>01</span><b>Primero entender</b><small>El problema antes que la tecnología.</small></div><div><span>02</span><b>Construir con criterio</b><small>Arquitectura clara y código mantenible.</small></div><div><span>03</span><b>Entregar algo real</b><small>Soluciones pensadas para personas.</small></div></div>
       </section>
 
       <section className="projects-section" id="proyectos">
-        <div className="section-kicker"><span>02 — TRABAJO SELECCIONADO</span><span>2024 — 2026</span></div>
+        <div className="section-kicker"><span>03 — TRABAJO SELECCIONADO</span><span>2024 — 2026</span></div>
         <div className="projects-heading"><h2>De la idea<br/>a <em>lo que funciona.</em></h2><p>Productos, colaboraciones y trabajos freelance. Abrí cada ficha para ver el desafío, la solución y las tecnologías.</p></div>
         <div className="project-groups">
           <div className="project-group"><div className="project-group-heading"><h3>Trabajos realizados</h3><span>03 / FREELANCE</span></div><div className="projects-list">{projects.filter(project=>project.group==='trabajos').map(project=><ProjectFolder key={project.index} project={project}/>)}</div></div>
           <div className="project-group"><div className="project-group-heading"><h3>Proyectos propios</h3><span>06 / INCLUYE COLABORACIÓN OPEN SOURCE</span></div><div className="projects-list">{projects.filter(project=>project.group==='propios').map(project=><ProjectFolder key={project.index} project={project}/>)}</div></div>
         </div>
         <p className="projects-note">09 PROYECTOS <span>·</span> TRABAJO FREELANCE, STARTUP, AUTOMATIZACIONES & OPEN SOURCE</p>
-      </section>
-
-      <section className="stack-section" id="stack">
-        <div className="section-kicker"><span>03 — HERRAMIENTAS</span><span>STACK EN MOVIMIENTO</span></div>
-        <div className="stack-heading"><h2>La herramienta<br/><em>correcta para el trabajo.</em></h2><p>Esta es la tecnología que aparece en mis proyectos y en mi trabajo diario.</p></div>
-        <StackMarquee logos={tech} />
-        <div className="stack-groups"><div><span>01 / BACKEND</span><p>NestJS · Node.js · Go · Python · APIs</p></div><div><span>02 / FRONTEND</span><p>React · Next.js · TypeScript · Tailwind</p></div><div><span>03 / DATA & TOOLS</span><p>PostgreSQL · MongoDB · Prisma · Supabase · Resend</p></div></div>
       </section>
 
       <section className="journey-section" id="trayectoria">

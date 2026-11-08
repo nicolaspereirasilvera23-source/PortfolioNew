@@ -43,6 +43,9 @@ body { background: var(--paper); color: var(--ink); }
 .stack-groups > div { border-color: var(--line); }
 .logo-loop-slot { border-block: 2px solid var(--ink); }
 .logo-item, .tech-logo-name { color: var(--ink); }
+.tech-logo-name { display: inline-flex; align-items: center; gap: 11px; font: 11px var(--mono); }
+.tech-logo-name img { width: 25px; height: 25px; object-fit: contain; opacity: .9; }
+.logo-item:hover .tech-logo-name img { filter: invert(34%) sepia(22%) saturate(1756%) hue-rotate(223deg) brightness(90%) contrast(87%); }
 .logo-item:after { color: var(--violet); }
 .hero-editorial .portrait-wrap { overflow: visible; }
 
@@ -102,6 +105,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .project-entry.is-open .folder-stage .folder-details { padding-inline: 12px; }
   .project-arrow { margin-right: 12px; }
   .site-header .nav-links { background: var(--paper); border-bottom: 2px solid var(--ink); }
+  .stack-section { padding-block: 72px; }
+  .stack-heading { margin-top: 48px; }
+  .tech-logo-name { gap: 8px; font-size: 9px; }
+  .tech-logo-name img { width: 20px; height: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
