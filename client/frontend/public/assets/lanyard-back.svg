@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1440" viewBox="0 0 1024 1440">
+  <rect width="1024" height="1440" fill="#f1eee9"/>
+  <path d="M0 0h1024v26H0z" fill="#8d71da"/>
+  <g fill="#17151d" font-family="Arial, Helvetica, sans-serif">
+    <text x="88" y="470" font-size="39" letter-spacing="7" fill="#65529a">SOFTWARE DEVELOPER</text>
+    <path d="M88 520h848" stroke="#c9c3cf" stroke-width="3"/>
+    <text x="84" y="660" font-size="82" font-weight="700" letter-spacing="-3">Nicolás</text>
+    <text x="84" y="755" font-size="82" font-weight="700" letter-spacing="-3">Pereira</text>
+    <text x="88" y="855" font-size="34" letter-spacing="1">TypeScript · Python</text>
+    <text x="88" y="910" font-size="34" letter-spacing="1">PostgreSQL</text>
+    <path d="M88 970h848" stroke="#c9c3cf" stroke-width="3"/>
+    <text x="88" y="1055" font-size="31" letter-spacing="5" fill="#65529a">FULLSTACK ENGINEERING</text>
+    <text x="88" y="1300" font-size="24" letter-spacing="4" fill="#77717d">MONTEVIDEO · URUGUAY</text>
+  </g>
+  <circle cx="905" cy="1180" r="24" fill="#8d71da"/>
+  <circle cx="905" cy="1180" r="9" fill="#f1eee9"/>
+</svg>
