@@ -17,7 +17,7 @@ export class ContactService {
       throw new InternalServerErrorException('La variable RESEND_API_KEY no está configurada.');
     }
 
-    const recipient = process.env.RECIPIENT_EMAIL ?? process.env.CONTACT_EMAIL ?? 'nicolas.psilvera@gmail.com';
+    const recipient = process.env.RECIPIENT_EMAIL ?? process.env.CONTACT_EMAIL ?? 'labsnezt@gmail.com';
     const sender = process.env.SENDER_EMAIL ?? process.env.RESEND_FROM ?? 'Portfolio Contact <onboarding@resend.dev>';
     const subject = data.subject?.trim() || `Nuevo contacto desde portfolio: ${data.name}`;
     const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
