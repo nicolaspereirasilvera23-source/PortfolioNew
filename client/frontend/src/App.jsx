@@ -64,33 +64,6 @@ function HeroPortrait() {
   return <div className="portrait-wrap"><img className="lanyard-fallback" src="/assets/yop.jpg" alt="" aria-hidden="true"/><Suspense fallback={null}><Lanyard /></Suspense></div>;
 }
 
-function ContactForm() {
-  const [status, setStatus] = useState({ kind:'', message:'' });
-  const [sending, setSending] = useState(false);
-  async function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const values = Object.fromEntries(new FormData(form));
-    setSending(true); setStatus({ kind:'loading', message:'Enviando mensaje mediante NestJS y Resend…' });
-    try {
-      const endpoint = import.meta.env.VITE_PORTFOLIO_API_URL || 'https://portfolio-api-navy.vercel.app/api/send-email';
-      const response = await fetch(endpoint, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify(values) });
-      const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.detail || result.message || 'No se pudo enviar el mensaje.');
-      form.reset(); setStatus({ kind:'success', message:'Mensaje enviado. Gracias por escribirme.' });
-    } catch (error) {
-      setStatus({ kind:'error', message:`${error.message} También podés escribirme a nicolas.psilvera@gmail.com.` });
-    } finally { setSending(false); }
-  }
-  return <form className="contact-form" onSubmit={handleSubmit}>
-    <div className="form-row"><label>Tu nombre<input name="name" autoComplete="name" required placeholder="¿Cómo te llamás?"/></label><label>Tu email<input name="email" type="email" autoComplete="email" required placeholder="nombre@correo.com"/></label></div>
-    <label>Asunto <span>· opcional</span><input name="subject" placeholder="Proyecto, oportunidad, idea…"/></label>
-    <label>Mensaje<textarea name="message" required rows="4" placeholder="Contame un poco…"/></label>
-    <button type="submit" disabled={sending}>{sending ? 'Enviando…' : 'Enviar mensaje'}<ArrowUpRight size={17}/></button>
-    <p className={`form-status ${status.kind}`} role="status" aria-live="polite">{status.message}</p>
-  </form>;
-}
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   return <>
@@ -156,7 +129,7 @@ function App() {
         <div className="education-line"><span>FORMACIÓN CONTINUA</span><p>Backend · APIs · testing · arquitectura · TypeScript · NestJS · bases de datos</p></div>
       </section>
 
-      <section className="contact-section" id="contacto"><div className="section-kicker"><span>05 — PRÓXIMO PASO</span><span>MONTEVIDEO, URUGUAY</span></div><div className="contact-body"><p className="overline">¿TENÉS UN PROBLEMA INTERESANTE?</p><h2>Hagamos que<br/><em>funcione.</em></h2><div className="contact-layout"><div><a className="contact-cta" href="mailto:nicolas.psilvera@gmail.com">Escribime <ArrowUpRight size={22}/></a><p className="contact-email">nicolas.psilvera@gmail.com</p></div><ContactForm/></div></div><div className="contact-bottom"><span>DISPONIBLE PARA OPORTUNIDADES Y PROYECTOS FREELANCE</span><div><a href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href="mailto:nicolas.psilvera@gmail.com" aria-label="Email"><Mail/></a></div></div></section>
+      <section className="contact-section" id="contacto"><div className="section-kicker"><span>05 — PRÓXIMO PASO</span><span>MONTEVIDEO, URUGUAY</span></div><div className="contact-body"><p className="overline">¿TENÉS UN PROBLEMA INTERESANTE?</p><h2>Hagamos que<br/><em>funcione.</em></h2><div className="contact-layout"><div><a className="contact-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=nicolas.psilvera%40gmail.com&su=Contacto%20desde%20el%20portfolio" target="_blank" rel="noreferrer" aria-label="Escribirme por Gmail">Escribime <ArrowUpRight size={22}/></a><p className="contact-email">nicolas.psilvera@gmail.com</p></div><p className="contact-note">Se abrirá Gmail con mi dirección y el asunto listos para que me escribas.</p></div></div><div className="contact-bottom"><span>DISPONIBLE PARA OPORTUNIDADES Y PROYECTOS FREELANCE</span><div><a href="https://github.com/nicolaspereirasilvera23-source" target="_blank" rel="noreferrer" aria-label="GitHub"><Github/></a><a href="https://www.linkedin.com/in/nicolas-psilvera" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin/></a><a href="mailto:nicolas.psilvera@gmail.com" aria-label="Email"><Mail/></a></div></div></section>
     </main>
     <footer><a className="wordmark" href="#inicio"><span className="wordmark-mark">NP</span><span>Nicolás Pereira</span></a><span>HECHO CON CURIOSIDAD · © 2026</span><a href="#inicio">VOLVER ARRIBA ↑</a></footer>
   </>;
