@@ -136,10 +136,10 @@ function App() {
       <section className="journey-section" id="trayectoria">
         <div className="section-kicker"><span>04 — TRAYECTORIA</span><span>APRENDER · HACER · MEJORAR</span></div>
         <div className="journey-grid"><h2>Experiencia<br/>con los pies<br/><em>en la tierra.</em></h2><div className="timeline">
-          <article><time>2026 — PRESENTE</time><div><h3>Backend Developer</h3><p className="org">Qubik Timer · Equipo open source</p><p>NestJS y TypeScript en un equipo colaborativo. Arquitectura, Git Flow, PRs y trabajo junto a frontend, QA y DB.</p></div></article>
-          <article><time>JUL 2024 — PRESENTE</time><div><h3>Fullstack Developer Freelance</h3><p className="org">Museo Ezequiel Zamora Casa Pulpería · Venezuela</p><p>Web pública y dashboard administrativo. API en Go, MongoDB, Cloudinary y correo transaccional con Resend.</p></div></article>
-          <article><time>2026</time><div><h3>Software Developer Freelance</h3><p className="org">QRLY · Álbum QR para evento familiar</p><p>Solución digital para centralizar fotos de un cumpleaños mediante QR; desde el flujo de usuario hasta el despliegue.</p></div></article>
-          <article><time>FEB 2024 — PRESENTE</time><div><h3>Administrador / Coordinador</h3><p className="org">Club Suárez Vóley · Uruguay</p><p>Gestión de inscripciones, cronogramas y comunicación. Experiencia coordinando personas, datos y operación real.</p></div></article>
+          <article><time>JULIO 2026</time><div><h3>Backend Developer</h3><p className="org">Qubik Timer · Equipo open source</p><p>NestJS y TypeScript en un equipo colaborativo. Arquitectura, Git Flow, PRs y trabajo junto a frontend, QA y DB.</p></div></article>
+          <article><time>SEPTIEMBRE 2026</time><div><h3>Fullstack Developer Freelance</h3><p className="org">Museo Ezequiel Zamora Casa Pulpería · Venezuela</p><p>Web pública y dashboard administrativo. API en Go, MongoDB, Cloudinary y correo transaccional con Resend.</p></div></article>
+          <article><time>ABRIL 2026</time><div><h3>Software Developer Freelance</h3><p className="org">QRLY · Álbum QR para evento familiar</p><p>Solución digital para centralizar fotos de un cumpleaños mediante QR; desde el flujo de usuario hasta el despliegue.</p></div></article>
+          <article><time>FEB 2024 — PRESENTE</time><div><h3>Administrador / Coordinador</h3><p className="org">Club Suárez Vóley · Uruguay</p><p>Además de coordinar personas, datos y operación, generé soluciones digitales para agilizar tareas manuales: desde landing pages hasta un sistema de asistencias. Hoy cada integrante llega, ingresa un PIN de 4 dígitos y su asistencia queda registrada.</p></div></article>
         </div></div>
         <div className="education-line"><span>FORMACIÓN CONTINUA</span><p>Backend · APIs · testing · arquitectura · TypeScript · NestJS · bases de datos</p></div>
       </section>
