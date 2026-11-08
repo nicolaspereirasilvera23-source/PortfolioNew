@@ -2,6 +2,9 @@ import { BadGatewayException, Injectable, InternalServerErrorException } from '@
 import { Resend } from 'resend';
 import { ContactMessageDto } from './contact-message.dto';
 
+const FROM_EMAIL = 'Contact Nicolás <onboarding@resend.dev>';
+const TO_EMAIL = 'nicolas.psilvera@gmail.com';
+
 @Injectable()
 export class ContactService {
   health() {
@@ -17,19 +20,28 @@ export class ContactService {
       throw new InternalServerErrorException('La variable RESEND_API_KEY no está configurada.');
     }
 
-    const recipient = process.env.RECIPIENT_EMAIL ?? process.env.CONTACT_EMAIL ?? 'labsnezt@gmail.com';
-    const sender = process.env.SENDER_EMAIL ?? process.env.RESEND_FROM ?? 'Portfolio Contact <onboarding@resend.dev>';
-    const subject = data.subject?.trim() || `Nuevo contacto desde portfolio: ${data.name}`;
+    const recipient = process.env.RECIPIENT_EMAIL ?? process.env.CONTACT_EMAIL ?? TO_EMAIL;
+    const subject = (data.subject?.trim() || `Contacto de portfolio — ${data.name}`).replace(/[\r\n]+/g, ' ');
     const escapeHtml = (value: string) => value.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
+    const html = `
+      <h2>Nuevo mensaje desde el portfolio</h2>
+      <ul>
+        <li><strong>Nombre:</strong> ${escapeHtml(data.name)}</li>
+        <li><strong>Email:</strong> ${escapeHtml(data.email)}</li>
+        <li><strong>Asunto:</strong> ${escapeHtml(subject)}</li>
+      </ul>
+      <p><strong>Mensaje:</strong></p>
+      <p>${escapeHtml(data.message).replace(/\n/g, '<br />')}</p>
+    `;
 
     try {
       const resend = new Resend(apiKey);
       const { data: result, error } = await resend.emails.send({
-        from: sender,
+        from: FROM_EMAIL,
         to: [recipient],
         replyTo: data.email,
         subject,
-        html: `<div style="font-family:Arial,sans-serif;color:#221D26;line-height:1.5;max-width:600px;margin:auto;padding:24px;background:#F7F1E2;border:1px solid #221D26"><p style="color:#6A46E5;font-weight:bold">MENSAJE DE PORTFOLIO</p><h2>${escapeHtml(data.name)} te ha contactado</h2><p><strong>De:</strong> ${escapeHtml(data.name)} &lt;${escapeHtml(data.email)}&gt;</p><p><strong>Asunto:</strong> ${escapeHtml(subject)}</p><div style="white-space:pre-wrap;background:white;padding:16px;border:1px solid #D6CEBE">${escapeHtml(data.message)}</div><small>Enviado desde el portfolio de Nicolás Pereira · NestJS + Resend.</small></div>`,
+        html,
       });
       if (error) {
         console.error('[Resend] Email rejected:', { name: error.name, message: error.message });
