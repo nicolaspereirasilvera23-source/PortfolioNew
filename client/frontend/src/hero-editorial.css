@@ -43,11 +43,11 @@
   margin-left: calc(50% - 50vw);
   padding: 26px clamp(24px, 5.5vw, 84px) 22px;
   display: grid;
-  grid-template-rows: auto minmax(390px, 1fr) auto;
+  grid-template-rows: auto minmax(500px, 1fr) auto;
   background: var(--hero-paper);
   color: var(--hero-ink);
   border: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-editorial .hero-meta {
@@ -95,7 +95,7 @@
 .hero-identity {
   width: 100%;
   height: 100%;
-  min-height: 440px;
+  min-height: clamp(500px, 68vh, 700px);
   position: relative;
   display: grid;
   place-items: center;
@@ -131,9 +131,9 @@
 }
 
 .hero-editorial .portrait-wrap {
-  width: min(430px, 48vw);
-  height: clamp(390px, 58vh, 570px);
-  min-height: 370px;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
   margin: 0;
   position: relative;
   pointer-events: auto;
@@ -210,16 +210,17 @@
 
   .hero-section.hero-editorial {
     min-height: calc(100svh - 72px);
-    grid-template-rows: auto minmax(360px, 1fr) auto;
+    grid-template-rows: auto minmax(460px, 1fr) auto;
   }
 
   .hero-identity {
-    min-height: 400px;
+    min-height: 460px;
   }
 
   .hero-editorial .portrait-wrap {
-    width: min(390px, 58vw);
-    height: clamp(370px, 56vh, 500px);
+    width: 100%;
+    height: 100%;
+    min-height: 0;
   }
 
   .hero-identity h1 {
@@ -244,7 +245,7 @@
   .hero-section.hero-editorial {
     min-height: calc(100svh - 66px);
     padding: 21px 18px 20px;
-    grid-template-rows: auto minmax(320px, 1fr) auto;
+    grid-template-rows: auto minmax(470px, 1fr) auto;
   }
 
   .hero-editorial .hero-meta {
@@ -262,18 +263,18 @@
   }
 
   .hero-identity {
-    min-height: 330px;
+    min-height: 470px;
   }
 
   .hero-identity h1 {
-    top: 10%;
+    top: 62%;
     font-size: clamp(32px, 10.6vw, 58px);
   }
 
   .hero-editorial .portrait-wrap {
-    width: min(350px, 76vw);
-    height: clamp(320px, 53vh, 410px);
-    min-height: 320px;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
   }
 
   .hero-editorial .lanyard-fallback {
