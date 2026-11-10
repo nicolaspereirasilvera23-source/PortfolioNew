@@ -102,13 +102,21 @@ body { background: var(--paper); color: var(--ink); }
 .project-demo-link { background: var(--violet); color: var(--paper); }
 .project-repo-link { background: transparent; color: var(--ink); }
 .project-demo-unavailable { font: 9px var(--mono); color: #625b66; }
+.project-entry.is-open { grid-column: auto; }
+.project-trigger { min-height: 0; }
+.project-entry.is-open .project-trigger { min-height: 0; }
+.project-entry.is-open .folder-stage { height: auto; min-height: 0; padding: 16px 22px 22px; border-top: 1px solid rgba(36, 29, 39, .28); overflow: visible; }
 @media (max-width: 700px) {
-  .project-entry.is-open .folder-stage { min-height: 0; padding: 22px 16px; }
+  .project-entry.is-open .folder-stage { height: auto; min-height: 0; padding: 16px 14px 20px; }
   .project-details-panel { grid-template-columns: 1fr; gap: 24px; }
   .project-details-copy { grid-template-columns: 1fr; gap: 18px; }
   .project-details-copy .project-technical-detail { grid-column: auto; }
   .project-details-aside { border-left: 0; border-top: 1px solid rgba(36, 29, 39, .35); padding: 17px 0 0; }
   .project-detail-links { margin-top: 0; padding-top: 18px; }
+}
+@media (max-width: 850px) {
+  .project-entry.is-open { grid-column: auto; }
+  .project-entry.is-open .folder-stage { height: auto !important; }
 }
 
 .contact-cta { border-color: var(--violet); color: var(--ink); }

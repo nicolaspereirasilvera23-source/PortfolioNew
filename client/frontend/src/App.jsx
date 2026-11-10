@@ -6,7 +6,6 @@ const GMAIL_COMPOSE_URL = 'https://mail.google.com/mail/?view=cm&fs=1&to=nicolas
 const LogoLoop = lazy(() => import('./components/LogoLoop.jsx').then(module => ({ default:module.LogoLoop })));
 const Lanyard = lazy(() => import('./components/Lanyard.jsx').then(module => ({ default:module.Lanyard })));
 const FluxLines = lazy(() => import('./components/FluxLines.jsx').then(module => ({ default:module.FluxLines })));
-const Folder = lazy(() => import('./components/Folder.jsx').then(module => ({ default:module.Folder })));
 
 
 
@@ -25,16 +24,30 @@ const tech = [
 
 function ProjectFolder({ project }) {
   const [open, setOpen] = useState(false);
-  const screenshots = project.images || [project.image];
+  const screenshots = project.images || (project.image ? [project.image] : []);
   return <article className={`project-entry ${open ? 'is-open' : ''}`}>
     <button className="project-trigger" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={`${open ? 'Cerrar' : 'Abrir'} carpeta de ${project.name}`}>
       <span className="project-count">{project.index}</span>
-      <span className={`project-thumb ${screenshots.length > 1 ? 'has-multiple' : ''}`}>{screenshots.map((image, index) => <span className="project-thumb-shot" key={image}><img src={image} alt={`Captura ${index + 1} de ${project.name}`} loading="lazy"/></span>)}<span className="project-status">{project.status || 'Proyecto propio'}</span></span>
+      {screenshots.length > 0 && <span className={`project-thumb ${screenshots.length > 1 ? 'has-multiple' : ''}`}>{screenshots.map((image, index) => <span className="project-thumb-shot" key={image}><img src={image} alt={`Captura ${index + 1} de ${project.name}`} loading="lazy"/></span>)}<span className="project-status">{project.status || 'Proyecto propio'}</span></span>}
       <span className="project-card-copy"><span className="project-type">{project.type}</span><span className="project-name">{project.name}</span><span className="project-description">{project.description}</span></span>
       <ArrowDownRight className="project-arrow" size={22} />
     </button>
-      <div className="folder-stage">{open && <Suspense fallback={<span className="folder-loading">Abriendo proyecto…</span>}><Folder project={project} open={open} onOpenChange={setOpen}/></Suspense>}
-    </div>
+      {open && <div className="folder-stage"><div className="project-details-panel">
+        <div className="project-details-copy">
+          <section><p className="project-detail-label">Objetivo</p><p>{project.objective || project.description}</p></section>
+          <section><p className="project-detail-label">Mi aporte</p><p>{project.contribution || project.detail}</p></section>
+          <section className="project-technical-detail"><p className="project-detail-label">Implementación</p><p>{project.detail}</p></section>
+        </div>
+        <aside className="project-details-aside">
+          <p className="project-detail-label">Stack utilizado</p>
+          <div className="project-detail-tags">{project.stack.map(item=><span key={item}>{item}</span>)}</div>
+          <div className="project-detail-links">
+            {project.url && <a className="project-demo-link" href={project.url} target="_blank" rel="noreferrer">Ver demo <span aria-hidden="true">↗</span></a>}
+            {project.repo && <a className="project-repo-link" href={project.repo} target="_blank" rel="noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>}
+            {!project.url && <span className="project-demo-unavailable">Demo pública en preparación</span>}
+          </div>
+        </aside>
+      </div></div>}
   </article>;
 }
 
