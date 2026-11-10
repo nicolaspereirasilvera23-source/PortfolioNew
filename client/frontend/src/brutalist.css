@@ -85,6 +85,32 @@ body { background: var(--paper); color: var(--ink); }
 .project-tags span { color: var(--ink); border: 1px solid var(--ink); background: var(--paper); }
 .folder-details > a { color: var(--ink); border-color: var(--violet); }
 
+/* Project details use the expanded card area as a readable case study. */
+.project-entry.is-open .folder-stage { height: auto; min-height: 280px; padding: clamp(20px, 4vw, 48px); justify-content: stretch; align-items: stretch; overflow: visible; }
+.project-details-panel { width: 100%; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(220px, .8fr); gap: clamp(28px, 6vw, 82px); color: var(--ink); }
+.project-details-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 26px 36px; }
+.project-details-copy section { border-top: 1px solid rgba(36, 29, 39, .35); padding-top: 11px; }
+.project-details-copy .project-technical-detail { grid-column: 1 / -1; }
+.project-details-copy section > p:not(.project-detail-label) { max-width: 62ch; margin: 0; font-size: 13px; line-height: 1.7; }
+.project-detail-label { margin: 0 0 9px; color: #5c4a82; font: 9px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+.project-details-aside { border-left: 1px solid rgba(36, 29, 39, .35); padding-left: clamp(18px, 3vw, 36px); display: flex; flex-direction: column; align-items: flex-start; }
+.project-detail-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.project-detail-tags span { padding: 6px 8px; border: 1px solid var(--ink); font: 9px var(--mono); }
+.project-detail-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 28px; }
+.project-detail-links a { display: inline-flex; align-items: center; gap: 17px; padding: 11px 14px; border: 2px solid var(--ink); font-size: 12px; font-weight: 700; transition: transform .18s, box-shadow .18s, background .18s; }
+.project-detail-links a:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--ink); }
+.project-demo-link { background: var(--violet); color: var(--paper); }
+.project-repo-link { background: transparent; color: var(--ink); }
+.project-demo-unavailable { font: 9px var(--mono); color: #625b66; }
+@media (max-width: 700px) {
+  .project-entry.is-open .folder-stage { min-height: 0; padding: 22px 16px; }
+  .project-details-panel { grid-template-columns: 1fr; gap: 24px; }
+  .project-details-copy { grid-template-columns: 1fr; gap: 18px; }
+  .project-details-copy .project-technical-detail { grid-column: auto; }
+  .project-details-aside { border-left: 0; border-top: 1px solid rgba(36, 29, 39, .35); padding: 17px 0 0; }
+  .project-detail-links { margin-top: 0; padding-top: 18px; }
+}
+
 .contact-cta { border-color: var(--violet); color: var(--ink); }
 .contact-form label { color: var(--muted); }
 .contact-form input, .contact-form textarea { border-color: var(--line); color: var(--ink); }

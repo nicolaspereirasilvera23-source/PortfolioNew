@@ -1,15 +1,27 @@
-import FolderMotion from './FolderMotion.jsx';
-
-export function Folder({ project, open, onOpenChange }) {
-  const contents = <div className="folder-project-copy">
-    <p className="folder-project-type">{project.type}</p>
-    <p className="folder-project-description">{project.description}</p>
-    <p className="folder-project-detail">{project.detail}</p>
-    <div className="folder-project-tags">{project.stack.map(item=><span key={item}>{item}</span>)}</div>
-    <div className="folder-project-links">
-      {project.url && <a href={project.url} target="_blank" rel="noreferrer" onClick={event=>event.stopPropagation()}>Ver demo ↗</a>}
-      {project.repo && <a href={project.repo} target="_blank" rel="noreferrer" onClick={event=>event.stopPropagation()}>Ver repositorio ↗</a>}
+export function Folder({ project }) {
+  return <div className="project-details-panel">
+    <div className="project-details-copy">
+      <section>
+        <p className="project-detail-label">Objetivo</p>
+        <p>{project.objective || project.description}</p>
+      </section>
+      <section>
+        <p className="project-detail-label">Mi aporte</p>
+        <p>{project.contribution || project.detail}</p>
+      </section>
+      <section className="project-technical-detail">
+        <p className="project-detail-label">Implementación</p>
+        <p>{project.detail}</p>
+      </section>
     </div>
+    <aside className="project-details-aside">
+      <p className="project-detail-label">Stack utilizado</p>
+      <div className="project-detail-tags">{project.stack.map(item => <span key={item}>{item}</span>)}</div>
+      <div className="project-detail-links">
+        {project.url && <a className="project-demo-link" href={project.url} target="_blank" rel="noreferrer">Ver demo <span aria-hidden="true">↗</span></a>}
+        {project.repo && <a className="project-repo-link" href={project.repo} target="_blank" rel="noreferrer">Ver repositorio <span aria-hidden="true">↗</span></a>}
+        {!project.url && <span className="project-demo-unavailable">Demo pública en preparación</span>}
+      </div>
+    </aside>
   </div>;
-  return <div className="folder-visual"><FolderMotion label={`Carpeta ${project.name}`} items={[{ content:contents }]} mode="flap" variant="solid" color="#594681" paperColor="#eee8ff" size={.76} open={open} onOpenChange={onOpenChange} draggable={false} zoomOnClick={false} intro={false} theme="dark" className="portfolio-folder"/></div>;
 }
