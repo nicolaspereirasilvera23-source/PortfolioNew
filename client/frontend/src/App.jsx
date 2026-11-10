@@ -105,7 +105,8 @@ function App() {
         <div className="projects-heading"><h2>De la idea<br/>a <em>lo que funciona.</em></h2><p>Productos, colaboraciones y trabajos freelance. Abrí cada ficha para ver el desafío, la solución y las tecnologías.</p></div>
         <div className="project-groups">
           <div className="project-group"><div className="project-group-heading"><h3>Trabajos realizados</h3><span>03 / FREELANCE</span></div><div className="projects-list">{getProjectsByGroup('trabajos').map(project=><ProjectFolder key={project.index} project={project}/>)}</div></div>
-          <div className="project-group"><div className="project-group-heading"><h3>Proyectos propios</h3><span>06 / INCLUYE COLABORACIÓN OPEN SOURCE</span></div><div className="projects-list">{getProjectsByGroup('propios').map(project=><ProjectFolder key={project.index} project={project}/>)}</div></div>
+          <div className="project-group"><div className="project-group-heading"><h3>Proyectos propios</h3><span>05 / DESARROLLOS PERSONALES</span></div><div className="projects-list">{getProjectsByGroup('propios').map(project=><ProjectFolder key={project.index} project={project}/>)}</div></div>
+          <div className="project-group"><div className="project-group-heading"><h3>Colaboraciones</h3><span>01 / OPEN SOURCE</span></div><div className="projects-list">{getProjectsByGroup('colaboraciones').map(project=><ProjectFolder key={project.index} project={project}/>)}</div></div>
         </div>
         <p className="projects-note">09 PROYECTOS <span>·</span> TRABAJO FREELANCE, STARTUP, AUTOMATIZACIONES & OPEN SOURCE</p>
       </section>
